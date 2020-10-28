@@ -8,7 +8,8 @@
 <body>
     <h3>This is Admin Site</h3>
     <div class="container">
-        <button><a href="cat-list.php">Manage Category</a></button>
+        <button><a href="cat-list.php">Manage Category</a></button><br><br>
+        <button><a href="member-list.php">Member List</a></button>
     </div>
 </body>
 </html>
