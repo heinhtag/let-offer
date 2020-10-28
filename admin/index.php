@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Home</title>
 </head>
 <body>
-    <h1>This is Admin Site</h1>
+    <h3>This is Admin Site</h3>
+    <div class="container">
+        <button><a href="cat-list.php">Manage Category</a></button>
+    </div>
 </body>
 </html>

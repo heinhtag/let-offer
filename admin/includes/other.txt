@@ -1,0 +1,43 @@
+<?php
+require('../confs.php');
+
+if (isset($_POST['submit'])) {
+    $title = $_POST['title'];
+    $remark = $_POST['remark'];
+    $target_dir = "../images/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    // $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+}
+    if (
+        $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif"
+    ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    } else {
+        $uploadOk = 1;
+    }
+    $created_at = $updated_at = date("Y-m-d H:i:s");
+    $sql = "INSERT INTO categories (title, remark, cover, created_at, updated_at)
+  VALUES (:title, :remark, :cover, :created_at, :updated_at);";
+    try {
+        $stmt = $conn->prepare($sql);
+        if ($uploadOk == 1) {
+            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                $stmt->execute(array($title, $remark, $target_file, $created_at, $updated_at));
+                echo "New records created successfully";
+            } else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        } else {
+            echo "error";
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+
+    $conn = null;
+} else {
+    echo 'error';
+}
