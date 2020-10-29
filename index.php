@@ -24,7 +24,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <div class="container">
             <?php foreach ($rows as $row) : ?>
                 <ul>
-                    <li><a href="#"><?php echo $row['title']; ?></a></li>
+                    <li><a href="subject.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></li>
                 </ul>
             <?php endforeach ?>
             <div>

@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
     <button><a href="index.php">Home</a></button><br><br>
         <?php foreach ($rows as $row) : ?>
             <ul>
-                <li><a href="#"><?php echo $row['title']; ?></a></li>
+                <li><a href="subj-list.php?id=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></li>
                 <button><a href="cat-edit.php?id=<?php echo $row['id']; ?>">Edit</a></button><br><br>
                 <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
                     <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
@@ -41,6 +41,7 @@ if (isset($_POST['submit'])) {
                 </form>
             </ul>
         <?php endforeach ?>
+        <button><a href="subj-add.php">New Subject</a></button><br><br>
         <button><a href="cat-add.php">New Category</a></button>
     </div>
 </body>
