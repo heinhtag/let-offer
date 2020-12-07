@@ -41,7 +41,6 @@ if (isset($_POST['submit'])) {
                 </form>
             </ul>
         <?php endforeach ?>
-        <button><a href="subj-add.php">New Subject</a></button><br><br>
         <button><a href="cat-add.php">New Category</a></button>
     </div>
 </body>

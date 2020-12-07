@@ -1,7 +1,7 @@
 <?php
 session_start();
 // connect db
-require_once('./config/db.php');
+require_once('./admin/confs/config.php');
 
 //check submit
 if (isset($_POST['submit'])) {

@@ -25,7 +25,7 @@ mysqli_close($conn);
         <?php foreach ($rows as $row) : ?>
             <ul>
                 <li><?php echo $row['name']; ?></li>
-                </form> -->
+                </form>
             </ul>
         <?php endforeach ?>
     </div>

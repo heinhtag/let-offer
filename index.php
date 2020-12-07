@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('./config/db.php');
+require('./admin/confs/config.php');
 
 $sql = "SELECT * FROM categories;";
 
@@ -15,6 +15,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Home</title>
 </head>
 
@@ -30,6 +31,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <div>
                 <button><a href="includes/logout.inc.php">Logout</a></button><br><br>
                 <button><a href="profile.php">Profile</a></button><br><br>
+                <button><a href="view-cart.php">View Cart</a></button><br><br>
                 <button><a href="invite.php">Invite Friend</a></button><br><br>
             </div>
         </div>

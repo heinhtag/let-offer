@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_POST['register_submit'])) { // evoke submit event ?
 
-    require('../config/db.php'); // open connection with database
+    require('../admin/confs/config.php'); // open connection with database
 
     // get form input data
     $username = $_POST['username'];
@@ -62,7 +62,7 @@ if (isset($_POST['register_submit'])) { // evoke submit event ?
                         if ($fileError === 0) {
                             if ($fileSize <= 1500000) {
                                 $newFileName = uniqid("", true) . '.' . $fileActualExt;
-                                $fileDestination = '../images/' . $newFileName;
+                                $fileDestination = '../admin/images/profile-images/' . $newFileName;
                                 if (move_uploaded_file($fileTmp, $fileDestination)) {
                                     mysqli_stmt_bind_param($stmt, 'ssss', $username, $email, $newFileName, $hashedPwd);
                                     if (mysqli_stmt_execute($stmt)) {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require('../config/db.php');
+require('../admin/confs/config.php');
 $username = $_POST['name'];
 $email = $_POST['name'];
 $password = $_POST['password'];

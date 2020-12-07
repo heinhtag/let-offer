@@ -25,13 +25,15 @@
                         <?php echo $row['title']; ?>
                     </option>
                 <?php endwhile; ?>
-            </select>
+            </select><br>
             <label for="name">Subject Name</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name"><br>
             <label for="Cover">Cover</label>
-            <input type="file" name="cover" id="cover">
+            <input type="file" name="cover" id="cover"><br>
             <label for="description">Description</label>
-            <textarea name="description" id="description" cols="20" rows="10"></textarea>
+            <textarea name="description" id="description" cols="20" rows="10"></textarea><br>
+            <label for="price">Price</label>
+            <input type="text" name="price" id="price" placeholder="$"><br>
             <input type="submit" value="Add Subject" name="submit">
         </form>
     </div>

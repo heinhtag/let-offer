@@ -3,7 +3,7 @@ session_start();
 $uid = $_SESSION['uid'];
 
 // connect with database
-require('./config/db.php');
+require('./admin/confs/config.php');
 if (isset($_SESSION['uemail']) && isset($_SESSION['uid'])) {
     $point = 10;
     $add_point_sql = "INSERT INTO points (point,user_id, created_at, updated_at) VALUES ('$point','$uid', now(), now());";
@@ -68,7 +68,7 @@ if (isset($_SESSION['uemail']) && isset($_SESSION['uid'])) {
     <div class="container">
         <button><a href="index.php">Back</a></button><br><br>
         <div class="profile">
-            <img src="images/<?php echo $row['profile']; ?>"><br><br>
+            <img src="admin/images/profile-images/<?php echo $row['profile']; ?>"><br><br>
         </div>
         <ul>
             <li>Name : <?php echo $row['name']; ?></li>
